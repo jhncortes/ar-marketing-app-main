@@ -59,16 +59,14 @@ function Home() {
 
   return (
     <div className='flex flex-col'>
-      <div className='min-h-screen bg-stone-50 py-12'>
-        <div className='flex flex-col items-center justify-center text-center'>
-         <h1 className='my-4 text-7xl'>
-           Wicked <span className="text-primary">XR</span> Banners: <br/>
-           Bringing Intelligent Virtual Concierges to <span className="text-violet-600">Life</span>
-         </h1>
-         <br />
-        </div>
+      <div className='min-h-screen py-12 flex flex-col items-center justify-center text-center'>
+        <h1 className='my-4 text-7xl'>
+          Wicked <span className="text-primary">XR</span> Banners: <br/>
+          Bringing Intelligent Virtual Concierges to <span className="text-violet-600">Life</span>
+        </h1>
+        <br />
       </div>
-      <div className='flex items-center justify-center px-6 py-40'>
+      <div className='flex items-center justify-center px-6 py-40 bg-stone-50'>
         <div className='max-w-6xl'>
           <div className='flex flex-wrap'>
             <h1>
@@ -89,7 +87,7 @@ function Home() {
 
         </div>
       </div>
-      <div className='flex items-center justify-center bg-stone-50 text-center px-6 py-40'>
+      <div className='flex items-center justify-center text-center px-6 py-40'>
         <div className='max-w-4xl'>
            <h1>Discover the Power of Custom AI</h1>
            <h3 className='mt-6'>Book Your Free 15-Minute Consultation Now!</h3>
@@ -105,7 +103,7 @@ function Home() {
            <Button onClick={handleBookingClick}>Schedule Your Free Consultation</Button>
         </div>
       </div>
-      <div className='flex items-center justify-center text-center px-6 py-40'>
+      <div className='flex items-center justify-center text-center px-6 py-40 bg-stone-50'>
         <div className='flex flex-col items-center justify-center text-center'>
           <h1>See Our <span className="text-primary">Virtual Staff</span> in Action!</h1>
           <p className='font-normal text-xl my-8 max-w-2xl '>
@@ -135,7 +133,7 @@ function Home() {
           </Carousel>
         </div>
       </div>
-      <div className='flex items-center justify-center text-center bg-stone-50 px-6 py-40'>
+      <div className='flex items-center justify-center text-center px-6 py-40'>
         <div className='max-w-7xl'>
           <h1>The Wicked XR Banners Experience:<br></br>Bringing Your Virtual Staff to Life</h1>
           <p className='font-normal text-xl my-8'>
@@ -152,7 +150,7 @@ function Home() {
           </Card>
         </div>
       </div>
-      <div className='flex items-center justify-center text-center py-40 px-6'>
+      <div className='flex items-center justify-center text-center py-40 px-6 bg-stone-50'>
         <div className='max-w-4xl'>
           <h1 className='my-10'>Why Choose Wicked XR Banners for Your Virtual Concierges?</h1>
           <Card className='text-left pt-4 bg-transparent'>

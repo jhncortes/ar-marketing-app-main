@@ -116,10 +116,10 @@ function Info() {
           </Carousel>
         </div>
       </div>
-      <div className='flex flex-col items-center justify-center text-center'>
+      <div className='flex flex-col items-center justify-center text-center my-20'>
         <div className='max-w-3xl'>
           <h1>Embark on Your AI-Powered Customer Service Journey</h1>
-          <p>
+          <p className='mt-6'>
             Don't miss the opportunity to lead the revolution in intelligent, personalised customer service. 
             With Wicked XR Banners, you can offer an unparalleled level of assistance and engagement.
           </p>
