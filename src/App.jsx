@@ -22,7 +22,7 @@ function App() {
         <Route path="/contact" element={<ContactUs/>}/>
         <Route path="/booking" element={<Booking/>}/>
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </BrowserRouter>
     
   );
