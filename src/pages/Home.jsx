@@ -60,7 +60,7 @@ function Home() {
   return (
     <div className='flex flex-col'>
       <div className='min-h-screen py-12 flex flex-col items-center justify-center text-center'>
-        <h1 className='my-4 text-7xl'>
+        <h1 className='my-4'>
           Wicked <span className="text-primary">XR</span> Banners: <br/>
           Bringing Intelligent Virtual Concierges to <span className="text-violet-600">Life</span>
         </h1>
@@ -87,18 +87,14 @@ function Home() {
 
         </div>
       </div>
-      <div className='flex items-center justify-center text-center px-6 py-40'>
-        <div className='max-w-4xl'>
+      <div className='flex items-center justify-center text-left px-6 py-40'>
+        <div className='max-w-6xl w-full'>
            <h1>Discover the Power of Custom AI</h1>
            <h3 className='mt-6'>Book Your Free 15-Minute Consultation Now!</h3>
-
-            <p className='mt-4 font-normal text-xl max-w'>
+            <p className='mt-4 font-normal text-xl max-w-xl'>
               Curious about how intelligent, knowledge-rich virtual concierges can elevate your customer experience?
               Schedule a no-obligation, 15-minute consultation with our experts and unlock the potential of AI-powered assistance in your space.
             </p>
-
-
-           {/* <img src={Placeholder} className='mt-6' /> */}
            <br />
            <Button onClick={handleBookingClick}>Schedule Your Free Consultation</Button>
         </div>
@@ -109,28 +105,29 @@ function Home() {
           <p className='font-normal text-xl my-8 max-w-2xl '>
             Wicked XR Banners goes beyond simple chatbots. We offer virtual staff members with deep, customizable knowledge:
           </p>
-          {/* Carousel with Autoplay Feature */}  
-          <Carousel 
-            plugins={[
-              Autoplay({
-                delay: 3000,
-              }),
-            ]}   
-            className='max-w-xl'>
-            <CarouselContent>
-              {images.map((image, index) => {
-                return (
-                  <CarouselItem key={index}>
+          {/* Carousel with Autoplay Feature */}
+          <div className='px-10'>
+            <Carousel 
+              plugins={[
+                Autoplay({
+                  delay: 3000,
+                }),
+              ]}   
+              className='max-w-xl'>
+              <CarouselContent>
+                {images.map((image, index) => {
+                  return (
+                    <CarouselItem key={index}>
+                      <img src={image}/>
+                    </CarouselItem>
+                  );
+                })}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
+          </div>  
 
-                    <img src={image}/>
-
-                  </CarouselItem>
-                );
-              })}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
         </div>
       </div>
       <div className='flex items-center justify-center text-center px-6 py-40'>
@@ -167,7 +164,7 @@ function Home() {
       <div className='flex flex-col justify-center items-center py-40 px-6'>
         <h1 className='font-bold text-center mb-1'>Transform Any Industry with Intelligent Virtual Assistance</h1>
         <h3 className='text-center my-6'>Wicked XR Banners' knowledge-rich virtual concierges can revolutionize various sectors:</h3>
-        <div className='grid grid-cols-3 items-center max-w-4xl gap-6 mt-6'>
+        <div className='grid sm:grid-cols-3 items-center max-w-4xl gap-6 mt-6'>
           {sectors.map((sector) => {
             return (
               <Card className='hover:scale-105 transition-all'>
@@ -184,124 +181,7 @@ function Home() {
       </div>      
 
     </div>
-  //   <main className='flex flex-col overflow-hidden min-h-screen items-center justify-center flex-wrap'>
-  //     <div className='text-center pt-20'>
-  //       <h1 className='my-4 text-6xl'>
-  //         Wicked <span className="text-primary">XR</span> Banners: <br/>
-  //         Bringing Intelligent Virtual Concierges to <span className="text-violet-600">Life</span>
-  //       </h1>
-  //       <br />
 
-  //     </div>
-  //     <div className='max-w-6xl'>
-  //       <div className='py-40'>
-  //         <h1>
-  //           <span className="text-violet-600">Revolutionize </span>
-  //           Customer Engagement with Customizable, Knowledge-Rich  
-  //           <span className="text-violet-600"> Virtual Staff</span>
-  //         </h1>
-  //         <h4 className='mt-6 font-normal max-w-3xl'>
-  //           Step into the future of customer service with Wicked XR Banners. 
-  //           Our platform offers fully customizable AI-powered concierges with rich, tailored knowledge bases.
-  //           These virtual staff members are ready to transform how you engage with customers in your physical spaces,
-  //           powered by our cutting-edge AI technology.
-  //         </h4>
-  //         <br />
-  //       <Button onClick={handleLearnMoreClick}>Learn More</Button>
-
-  //       </div>
-
-  //       <div className='py-40 text-center'>
-  //         <h1>Discover the Power of Custom AI</h1>
-  //         <h3 className='mt-6'>Book Your Free 15-Minute Consultation Now!</h3>
-  //         <p className='mt-4 font-normal text-xl text-center'>
-  //           Curious about how intelligent, knowledge-rich virtual concierges can elevate your customer experience? 
-  //           Schedule a no-obligation, 15-minute consultation with our experts and unlock the potential of AI-powered assistance in your space.
-  //         </p>
-  //         {/* <img src={Placeholder} className='mt-6' /> */}
-  //         <br />
-  //         <Button onClick={handleBookingClick}>Schedule Your Free Consultation</Button>
-  //       </div>
-  //     </div>
-
-
-  //     <div className='flex flex-col items-center justify-center text-center py-40'>
-  //       <h1>See Our <span className="text-primary">Virtual Staff</span> in Action!</h1>
-  //       <p className='font-normal text-xl my-8 max-w-2xl '>
-  //         Wicked XR Banners goes beyond simple chatbots. We offer virtual staff members with deep, customizable knowledge:
-  //       </p>
-  //       {/* <CarouselPlugin /> */}
-  //       <Carousel className='max-w-xl'>
-  //         <CarouselContent>
-  //           {images.map((image, index) => {
-  //             return (
-  //               <CarouselItem key={index}>
-
-  //                 <img src={image}/>
-
-  //               </CarouselItem>
-  //             );
-  //           })}
-  //         </CarouselContent>
-  //         <CarouselPrevious />
-  //         <CarouselNext />
-  //       </Carousel>
-  //     </div>
-
-  //     {/* New Section: The Wicked XR Banners Experience */}
-  //     <div className='flex flex-col items-center justify-center text-center py-40'>
-  //           <h1 className='text-3xl font-bold'>The Wicked XR Banners Experience : Bringing Your Virtual Staff to Life</h1>
-  //           <div className='bg-white p-6 rounded-lg shadow-md'>
-  //               <h3 className='text-2xl font-semibold'>Creating Your Custom AI-Powered Concierge</h3>
-  //               <ul className='list-disc ml-6 mt-2 space-y-2 text-left'>
-  //                   <li><b>Consultation:</b> Begin with a free 15-minute consultation to discuss your unique needs and goals.</li>
-  //                   <li><b>Knowledge Base Creation:</b> We'll help you build a comprehensive, tailored knowledge base for your AI.</li>
-  //                   <li><b>Character Design:</b> Collaborate with our team to create virtual staff that perfectly embodies your brand.</li>
-  //                   <li><b>AI Personality Development:</b> Fine-tune the AI's personality, communication style, and decision-making processes.</li>
-  //                   <li><b>Implementation:</b> We'll set up the WebAR technology and QR codes in your physical space.</li>
-  //                   <li><b>Launch:</b> Your customers can now interact with knowledgeable, personalized virtual concierges with a simple QR code scan.</li>
-  //                   <li><b>Ongoing Optimization:</b> Continuously refine your AI's performance based on real-world interactions and analytics.</li>
-  //               </ul>
-  //           </div>
-  //       </div>
-
-  //     {/* New Section: Why Choose Wicked XR Banners */}
-  //     <div className='flex flex-col justify-center items-center py-40'>
-  //         <h1 className='font-bold text-center max-w-3xl'>Why Choose Wicked XR Banners for Your Virtual Concierges?</h1>
-  //         <div className='bg-white p-6 rounded-lg shadow-md'>
-  //             <ul className='list-disc ml-6 mt-2 space-y-2 text-left'>
-  //                 <li><b>Deep, Customizable Knowledge:</b> Create virtual staff as informed as your top experts.</li>
-  //                 <li><b>Natural, Context-Aware Interactions:</b> Offer more human-like, intelligent conversations.</li>
-  //                 <li><b>Scalable Personalized Service:</b> Provide one-on-one attention to every customer without increasing costs.</li>
-  //                 <li><b>24/7 Availability:</b> Your virtual concierges are always ready to assist, day or night.</li>
-  //                 <li><b>Consistent Brand Experience:</b> Ensure every interaction aligns perfectly with your brand identity.</li>
-  //                 <li><b>Valuable Customer Insights:</b> Gain deep understanding of customer needs through AI-powered analytics.</li>
-  //             </ul>
-  //         </div>
-  //     </div>
-
-  //     {/* New Section: Transform Any Industry with Intelligent Virtual Assistance */}
-  //     <div className='flex flex-col justify-center items-center py-40'>
-  //         <h1 className='font-bold text-center mb-1'>Transform Any Industry with Intelligent Virtual Assistance</h1>
-  //         <h3 className='text-center my-6'>Wicked XR Banners' knowledge-rich virtual concierges can revolutionize various sectors:</h3>
-  //         <div className='grid grid-cols-3 items-center max-w-4xl gap-6 mt-6'>
-  //           {sectors.map((sector) => {
-  //             return (
-  //               <Card className='hover:scale-105 transition-all'>
-  //                 <CardHeader>
-  //                   <CardTitle>{sector.title}</CardTitle>
-  //                 </CardHeader>
-  //                 <CardContent>
-  //                   <p>{sector.description}</p>
-  //                 </CardContent>
-  //               </Card>   
-  //             );
-  //           })}
-  //         </div>
-  //     </div>
-      
-  //   </main>
-  // );
   );
 }
 

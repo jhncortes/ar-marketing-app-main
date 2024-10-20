@@ -46,7 +46,7 @@
                             return (
                                 <Card className='lg:max-w-lg md:max-w-full'>
                                     <CardHeader>
-                                        <div className='flex gap-5'>
+                                        <div className='flex flex-wrap gap-5'>
                                             <div>
                                                 <CardTitle>{member.name}</CardTitle>
                                                 <CardDescription className='pt-2'>{member.occupation}</CardDescription>
