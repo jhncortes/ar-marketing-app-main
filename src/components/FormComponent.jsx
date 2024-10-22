@@ -8,10 +8,7 @@ import {
 import { Button } from "./ui/button";
 
 
-
-
-
-const CardWrapper = ({title, buttonLabel, children}) => {
+const FormComponent = ({title, buttonLabel, children, onSubmit, buttonType}) => {
   return (
     <Card className="w-[350px] mb-4">
         <CardHeader>
@@ -21,10 +18,12 @@ const CardWrapper = ({title, buttonLabel, children}) => {
             {children}
         </CardContent>
         <CardFooter className='justify-center'>
-            <Button className='w-full'>{buttonLabel}</Button>
+        <Button className="w-full" type={buttonType} onClick={onSubmit}>
+          {buttonLabel}
+        </Button>
         </CardFooter>
     </Card>
   )
 }
 
-export default CardWrapper
+export default FormComponent

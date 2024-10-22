@@ -22,8 +22,6 @@ import {
 
 
 
-
-
 function Info() {
   const navigate = useNavigate(); // Initialize useNavigate
 
@@ -79,62 +77,72 @@ function Info() {
   const handleBookingClick = () => {
     navigate('/booking'); // Navigate to the booking page
   };
+
   return (
-    <div className='p-4 my-20'>
-      <div className='flex flex-col justify-center items-center'>
-        <div className='text-center mb-10'>
-          <h1>Our Groundbreaking Solution</h1>
+    <div class='my-16 py-8 px-6 min-h-screen'>
+      <div className=' flex flex-col items-center text-center mb-12'>
+          <h1 class='mb-2'>Our Groundbreaking Solution</h1>
           <p className='text-xl mt-4 font-normal max-w-2xl'>Wicked XR Banners goes beyond simple chatbots. We offer virtual staff members with deep, customizable knowledge:</p>
-        </div>
-        <div className='flex flex-col items-center justify-center'>
-          <Carousel className='max-w-xl'>
-            <CarouselContent>
-              {cardContents.map((content, index) => {
-                return (
-                  <CarouselItem key={index}>
-                    <Card>
-                      <CardHeader className='pb-6'>
-                        <CardTitle>{content.title}</CardTitle>
-                        <CardDescription className='pt-2 pb-0'>{content.description}</CardDescription>
+      </div>
+      <div className='grid grid-col-6 space-y-28 items-center justify-center my-24'>
+        {cardContents.map((content, index) => {
+          return (
+            <div key={index} className='max-w-7xl w-full'>
+              <h2 className='mb-4 max-w-7xl text-4xl font-bold'>{content.title}</h2>
+              <p className='mb-4 text-xl'>{content.description}</p>
+              <div className='grid sm:grid-cols-3 grid-cols-1 gap-6 mt-8'>
+                {content.contentList.map((list, index) => {
+                  return (
+                    <Card className='hover:scale-105 transition-all'>
+                      <CardHeader>
+                        <CardTitle>{list.feature}</CardTitle>
                       </CardHeader>
                       <CardContent>
-                        <ul className='space-y-4'>
-                          {content.contentList.map((list) => {
-                            return (
-                              <li><b>{list.feature} </b>{list.description}</li>
-                            )
-                          })}
-                        </ul>
+                        <p>{list.description}</p>
                       </CardContent>
-                    </Card>           
-                  </CarouselItem>
-                );
-              })}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
-        </div>
+                    </Card>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        })}
+
+
       </div>
-      <div className='flex flex-col items-center justify-center text-center my-20'>
-        <div className='max-w-3xl'>
-          <h1>Embark on Your AI-Powered Customer Service Journey</h1>
-          <p className='mt-6'>
-            Don't miss the opportunity to lead the revolution in intelligent, personalised customer service. 
-            With Wicked XR Banners, you can offer an unparalleled level of assistance and engagement.
-          </p>
-          <p className='mt-2'>
-            Take the first step towards transforming your space with knowledgeable, always-available virtual staff. 
-            Schedule your free 15-minute consultation today and discover how Wicked XR Banners can elevate your customer service to extraordinary new heights.
-          </p>
-          <Button onClick={handleBookingClick} className='mt-6 bg-violet-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-violet-700'>
-            Book Your Free Consultation Now
-          </Button>
-        </div>
+      <div className=' flex flex-col items-center text-center mt-20'>
+          <h1 class='mb-2 max-w-3xl'>Embark on Your AI-Powered Customer Service Journey</h1>
+          <p className='mt-6 text-xl max-w-2xl'>
+              Don't miss the opportunity to lead the revolution in intelligent, personalised customer service. 
+              With Wicked XR Banners, you can offer an unparalleled level of assistance and engagement.
+            </p>
+            <p className='mt-2 text-xl max-w-2xl'>
+              Take the first step towards transforming your space with knowledgeable, always-available virtual staff. 
+              Schedule your free 15-minute consultation today and discover how Wicked XR Banners can elevate your customer service to extraordinary new heights.
+            </p>
+            <Button onClick={handleBookingClick} className='mt-6 bg-violet-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-violet-700'>
+              Book Your Free Consultation Now
+            </Button>
       </div>
     </div>
   );
 }
+
+        {/* <div className='max-w-7xl w-full'>
+            <h1 class='mb-2 max-w-3xl'>Embark on Your AI-Powered Customer Service Journey</h1>
+            <p className='mt-6 text-xl max-w-2xl'>
+              Don't miss the opportunity to lead the revolution in intelligent, personalised customer service. 
+              With Wicked XR Banners, you can offer an unparalleled level of assistance and engagement.
+            </p>
+            <p className='mt-2 text-xl max-w-2xl'>
+              Take the first step towards transforming your space with knowledgeable, always-available virtual staff. 
+              Schedule your free 15-minute consultation today and discover how Wicked XR Banners can elevate your customer service to extraordinary new heights.
+            </p>
+            <Button onClick={handleBookingClick} className='mt-6 bg-violet-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-violet-700'>
+              Book Your Free Consultation Now
+            </Button>
+        </div>
+      </div> */}
 
 
 export default Info;

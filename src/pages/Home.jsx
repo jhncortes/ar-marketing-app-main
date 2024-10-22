@@ -1,15 +1,17 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Card, CardContent, CardTitle, CardHeader } from "@/components/ui/card";
 import { Button } from '@/components/ui/button';
+import Autoplay from "embla-carousel-autoplay"; // Import Autoplay from embla-carousel-autoplay
+import { motion, useScroll, useInView, useTransform } from "framer-motion"
+import { features, services, sectors } from '../homeContents.js' // Listed texts for sections
+
 import DemoImage1 from '../assets/demoimage1.jpg';
 import DemoImage2 from '../assets/demoimage2.jpg';
 import DemoImage3 from '../assets/demoimage3.jpg';
 import DemoImage4 from '../assets/demoimage4.jpg';
 import DemoImage5 from '../assets/demoimage5.jpg';
-import { useNavigate } from 'react-router-dom';
-import { Card, CardContent, CardTitle, CardHeader, CardDescription } from "@/components/ui/card";
-import Autoplay from "embla-carousel-autoplay"; // Import Autoplay from embla-carousel-autoplay
-import { motion, useScroll, useInView, useTransform } from "framer-motion"
-import { features, services, sectors } from '../homeContents.js' // Listed texts for sections
+
 
 import {
   Carousel,
@@ -20,7 +22,6 @@ import {
 } from "@/components/ui/carousel"
 
 
-
 const images = [
   DemoImage1,
   DemoImage2,
@@ -28,7 +29,6 @@ const images = [
   DemoImage4,
   DemoImage5,
 ];
-
 
 
 // Home Component
@@ -137,10 +137,10 @@ function Home() {
             Wicked XR Banners goes beyond simple chatbots. We offer virtual staff members with deep, customizable knowledge:
           </p>
           <Card className='text-left pt-6 bg-transparent'>
-            <CardContent className='space-y-4'>
+            <CardContent className='space-y-2'>
               {services.map((service, index) => {
                 return (
-                  <p className=''><b>{service.title}: </b>{service.description}</p>
+                  <p key={index} className=''><b>{service.title}: </b>{service.description}</p>
                 );
               })}
             </CardContent>
@@ -151,10 +151,10 @@ function Home() {
         <div className='max-w-4xl'>
           <h1 className='my-10'>Why Choose Wicked XR Banners for Your Virtual Concierges?</h1>
           <Card className='text-left pt-4 bg-transparent'>
-            <CardContent className='space-y-4'>
+            <CardContent className='space-y-2'>
               {features.map((feature, index) => {
                 return (
-                  <p className=''><b>{feature.title}: </b>{feature.description}</p>
+                  <p key={index} className=''><b>{feature.title}: </b>{feature.description}</p>
                 );
               })}
             </CardContent>
@@ -163,11 +163,11 @@ function Home() {
       </div>
       <div className='flex flex-col justify-center items-center py-40 px-6'>
         <h1 className='font-bold text-center mb-1'>Transform Any Industry with Intelligent Virtual Assistance</h1>
-        <h3 className='text-center my-6'>Wicked XR Banners' knowledge-rich virtual concierges can revolutionize various sectors:</h3>
-        <div className='grid sm:grid-cols-3 items-center max-w-4xl gap-6 mt-6'>
-          {sectors.map((sector) => {
+        <p className='font-normal text-xl my-8'>Wicked XR Banners' knowledge-rich virtual concierges can revolutionize various sectors:</p>
+        <div className='grid sm:grid-cols-3 items-stretch max-w-4xl gap-6 mt-6 h-full'>
+          {sectors.map((sector, index) => {
             return (
-              <Card className='hover:scale-105 transition-all'>
+              <Card key={index} className='hover:scale-105 transition-all'>
                 <CardHeader>
                   <CardTitle>{sector.title}</CardTitle>
                 </CardHeader>

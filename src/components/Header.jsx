@@ -13,8 +13,8 @@ import { Menu } from 'lucide-react';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const links = ['Info', 'About Us', 'Contact', 'Booking'];
-  const routes = ['/info', '/about', '/contact', '/booking'];
+  const links = ['Info', 'About Us', 'Blog', 'Booking'];
+  const routes = ['/info', '/about', '/blog', '/booking'];
   const icons = [
     <BookOpen className="w-5 h-5 mr-2"/>, 
     <SearchSlash className="w-5 h-5 mr-2"/>, 
@@ -38,11 +38,10 @@ export default function Header() {
       <nav className="flex items-center gap-7 text-muted-foreground text-sm">
         {links.map((link, index) => {
           return (
-            <Link to={routes[index]} className="hidden md:flex hover:text-primary hover:scale-105 transition-all">
+            <Link key={index} to={routes[index]} className="hidden md:flex hover:text-primary hover:scale-105 transition-all">
               {icons[index]}
               {link}
             </Link>
-            
           );
         })}
         <Menu className='md:hidden'onClick={toggleMenu}/>

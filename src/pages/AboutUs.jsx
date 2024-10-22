@@ -30,7 +30,7 @@
 
     function AboutUs() {
         return (
-            <div class='flex flex-col items-center my-20 p-8'>
+            <div class='flex flex-col items-center my-16 p-8 min-h-screen'>
                 <div>
                     <h1 class='mb-6 '>About Us</h1>
                     <p class='mt-6 font-normal text-xl mb-4 text-left max-w-5xl'>
